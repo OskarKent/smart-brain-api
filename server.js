@@ -33,10 +33,9 @@ app.put('/image', (req, res) => {image.handleImage(req, res, db)})
 
  
 
-app.listen(3000, ()=> {
-	console.log("app is running on port 3000")
-})
-
+const listener = app.listen(process.env.PORT, function() {
+  console.log('running on port ' + listener.address().port);
+});
 
 
 
